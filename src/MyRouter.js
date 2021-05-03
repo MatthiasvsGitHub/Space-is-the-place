@@ -5,33 +5,37 @@ import Satellites from './components/Satellites'
 import Moons from './components/Moons'
 import Stars from './components/Stars'
 import Team from './components/Team'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 
 function Routing() {
     return (
         <>
+        <Navbar />
             <Switch>
                 <Route exact path="/">
                     <Redirect to="/home" />
                 </Route>
-                <Route path="/home/:page?">
+                <Route exact path="/home/:page?">
                     <Home />
                 </Route>
-                <Route path="/planets/:page?">
+                <Route exact path="/planets/:page?">
                     <Planets />
                 </Route>
-                <Route path="/satellites/:page?">
+                <Route exact path="/satellites/:page?">
                     <Satellites />
                 </Route>
-                <Route path="/moons/:page?">
+                <Route exact path="/moons/:page?">
                     <Moons />
                 </Route>
-                <Route path="/stars/:page?">
+                <Route exact path="/stars/:page?">
                     <Stars />
                 </Route>
-                <Route path="/about">
+                <Route exact path="/about">
                     <Team />
                 </Route>
             </Switch>
+        <Navbar />
         </>
     )
 }
